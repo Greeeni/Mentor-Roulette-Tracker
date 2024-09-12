@@ -2,6 +2,7 @@ import os
 import requests
 import urllib.parse
 import json
+import pandas as pd
 from os.path import exists
 from dotenv import load_dotenv
 load_dotenv()
@@ -63,7 +64,7 @@ def dungeons():
         with open("dungeons.json", "xt") as file:
             json.dump(response.json(), file, indent=4)
 
-
+keys_to_delete = ['bannerHd', 'banner', 'nameDe', 'nameFr', 'nameJp', 'descriptionDe', 'descriptionFr', 'descriptionJp']
 def delete_values(json_data, keys):
     for result in json_data["results"]:
         for key in keys:
@@ -78,7 +79,7 @@ def clean_dungeons():
     print('Cleaning dungeons.json')
     with open("dungeons.json", 'r') as f:
         data = json.load(f)
-    keys_to_delete = ['bannerHd', 'banner', 'nameDe', 'nameFr', 'nameJp', 'descriptionDe', 'descriptionFr', 'descriptionJp']
+    
     delete_values(data, keys_to_delete)
     with open('dungeons.json', 'w') as file:
         json.dump(data, file, indent = 4)
@@ -87,4 +88,7 @@ def clean_dungeons():
 
 if __name__ == "__main__":
     # dungeons()
-    clean_dungeons()
+    # clean_dungeons()
+    df = pd.read_json('dungeons.json')
+
+    print(df.to_string()) 
