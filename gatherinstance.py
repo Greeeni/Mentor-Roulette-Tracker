@@ -91,4 +91,9 @@ if __name__ == "__main__":
     # clean_dungeons()
     df = pd.read_json('dungeons.json')
 
-    print(df.to_string()) 
+    # print(df.to_string()) 
+
+    # TODO 
+    # Check if hasNextPage == true/false to gather all information
+    # Find a way to collect all the data, and then from there separate it into different corresponding files
+    # Decide on using CSV or JSON (Probably json for ease of readability)

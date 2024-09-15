@@ -13,7 +13,7 @@ Gold Saucer
 3: guildhest
 4: trial (includes ex and unreal) 
 5: raids (normal (3), 24 (4) and savage (3))
-6: pvp cc (29), custom cc (30), frontline (7), rival wings (18)(I think(
+6: pvp cc (29), custom cc (30), frontline (7), rival wings (18)(I think)
 7: solo instance
 9: map instances
 16: ocean fishing 
