@@ -9,7 +9,7 @@ load_dotenv()
 tomestone_key = os.getenv("tomestone_key")
 tomestone_csrf = os.getenv("tomestone_csrf")
 
-'''
+"""
 To get the CSRF TOKEN for tomestone.gg, go to :
 https://tomestone.gg/api/documentation#/ClassJob/afcba82837e017446763caf52146933f
 
@@ -22,7 +22,7 @@ Then, to gather the curl headers, I ran one of the examples on the Swagger site,
 into a site such as:
 https://curlconverter.com/
 
-'''
+"""
 headers = {
     'accept': 'application/json',
     'Authorization': tomestone_key, # Has to follow the format "Bearer <your_api_key_here>"
@@ -32,6 +32,16 @@ headers = {
 # url = 'https://tomestone.gg/api/'
 
 def class_job(page, limit):
+    """
+    Description
+
+    Args:
+        page (str)
+        limit (int)
+
+    Returns:
+        None    
+    """
     params = {
         'page': str(page),
         'limit': str(limit),
@@ -43,6 +53,15 @@ def class_job(page, limit):
 # class_job(1, 100)
 
 def dungeons():
+    """
+    Description
+
+    Args:
+        None
+
+    Returns:
+        None    
+    """
     params = {
         'page': '1',
         'limit': '99',
@@ -75,6 +94,15 @@ def delete_values(json_data, keys):
             
 
 def clean_dungeons():
+    """
+    Description
+
+    Args:
+        None
+
+    Returns:
+        None    
+    """
     # data = json.loads()
     print('Cleaning dungeons.json')
     with open("dungeons.json", 'r') as f:
